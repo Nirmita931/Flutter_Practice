@@ -1,31 +1,18 @@
 import 'package:flutter/material.dart';
-
-import 'dashboard.dart';
+import 'package:leave_management_system/all_screen/manager_notification.dart';
 import 'manager_dashboard.dart';
 
 void main() => runApp(MaterialApp(
   home: Home(),
 ));
 
-class Home extends StatefulWidget {
-  @override
-  _DashboardState createState() => _DashboardState();
-}
-
-class _DashboardState extends State<Home> {
-
-  List<Dashboard> leaveDetail = [
-    Dashboard(employeeName: 'Nirmita KC', leaveType: 'Half Day', detail : 'message 1'),
-    Dashboard(employeeName: 'Samiksha Pandit', leaveType: 'Full Day', detail : 'message 2'),
-    Dashboard(employeeName: 'Test Name', leaveType: 'Half Day', detail : 'message 2')
-  ];
-
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
-        title: Text('Manager Dasboard'),
+        title: Text('Welcome Manager 01'),
         elevation: 0,
         actions: <Widget>[
           IconButton(
@@ -34,16 +21,13 @@ class _DashboardState extends State<Home> {
               color: Colors.white,
             ),
             onPressed: () {
-              // do something
+              Navigator.push(context, MaterialPageRoute(builder: (context) => (notification())),
+              );
             },
           )
         ],
       ),
-      body: Column(
-        children: leaveDetail.map ((dashboard) => ManagerDashboard(
-          dashboard : dashboard,
-        )).toList(),
-      ),
+      body: ManagerDashboard(),
       bottomNavigationBar: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget> [
@@ -65,7 +49,3 @@ class _DashboardState extends State<Home> {
     );
   }
 }
-
-
-
-
