@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ManagerDashboard extends StatelessWidget {
+class ManagerDashboard extends StatefulWidget {
+  @override
+  _ManagerDashboardState createState() => _ManagerDashboardState();
+}
+
+class _ManagerDashboardState extends State<ManagerDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

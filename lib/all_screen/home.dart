@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:leave_management_system/all_screen/manager_notification.dart';
-import 'manager_dashboard.dart';
+import 'package:leave_management_system/all_screen/manager_dashboard.dart';
 
 void main() => runApp(MaterialApp(
   home: Home(),
 ));
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +26,7 @@ class Home extends StatelessWidget {
               color: Colors.white,
             ),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => (notification())),
+              Navigator.push(context, MaterialPageRoute(builder: (context) => (NotificationPage())),
               );
             },
           )
